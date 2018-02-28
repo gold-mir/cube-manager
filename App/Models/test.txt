@@ -21,43 +21,6 @@ namespace test
             }
         }
 
-        public static List<string> GetAllCardsFromScryfallQueryAsync(string query)
-        {
-            List<string> result = new List<string>();
-            // if(current == null)
-            // {
-            //     result = new List<string>();
-            // } else {
-            //     result = current;
-            // }
-
-            try
-            {
-                HttpClient client = new HttpClient();
-
-                var response = client.GetStringAsync(query);
-                string data = response.Result;
-
-                dynamic json = JsonConvert.DeserializeObject(data);
-
-                foreach(dynamic item in json.data)
-                {
-                    result.Add((string)item.name);
-                }
-
-                if((bool)json.has_more)
-                {
-                    string newQuery = (string)json.next_page;
-                    result.AddRange(GetAllCardsFromScryfallQueryAsync(newQuery));
-                }
-
-            } catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return null;
-            }
-
-            return result;
-        }
+        
     }
 }
