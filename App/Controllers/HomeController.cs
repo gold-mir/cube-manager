@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
-using Application.Models;
+using CubeHelper.Models;
 
-namespace Application.Controllers
+namespace CubeHelper.Controllers
 {
     public class HomeController : Controller
     {
