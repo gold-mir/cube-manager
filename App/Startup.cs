@@ -6,6 +6,10 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CubeHelper
 {
+    public class DBConfiguration
+    {
+        public static void ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=;";
+    }
     public class Startup
     {
         public Startup(IHostingEnvironment env)
